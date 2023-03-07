@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FlexBox, FlexBoxAlignItems, FlexBoxJustifyContent, Input } from '@ui5/webcomponents-react';
+import { FlexBox, FlexBoxAlignItems, FlexBoxJustifyContent } from '@ui5/webcomponents-react';
 import { AiOutlineSearch, AiOutlineCloseCircle } from 'react-icons/ai';
 
 import { GeneralContext } from '../../context/GeneralContext';
@@ -17,12 +17,11 @@ export default function SearchBar() {
     setSearch("");
   }
 
-  async function submitSearch(e) {
-    e.preventDefault();
-    console.log(search);
+  async function submitSearch() {
     try {
-      //const response = movikiAPI.searchMovie(search);
-      //setMovieObj(response.data);
+      const response = await movikiAPI.searchMovie(search);
+      console.log(response)
+      setMovieObj(response.data);
     } catch (err) {
       console.error(err.message)
     }
@@ -41,6 +40,10 @@ export default function SearchBar() {
         type='text'
         value={search}
         onChange={handleForm}
+        onKeyDown={(e) => {
+          if(e.key === 'Enter') submitSearch()
+          if(e.key === 'Escape') clearForm()
+        }}
       />
       <AiOutlineCloseCircle onClick={clearForm}/>
     </FlexBox>

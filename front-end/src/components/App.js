@@ -1,5 +1,5 @@
 import { FlexBox, FlexBoxDirection, Text } from '@ui5/webcomponents-react';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 
 import './App.scss';
 import icon from '../assets/icon.svg';
@@ -8,14 +8,9 @@ import SearchBar from './SearchBar';
 import MovieInfo from './MovieInfo';
 
 import { GeneralContext } from '../context/GeneralContext';
-import movieExample from '../services/movieExample.json';
 
 export default function App() {
-  const { movieObj, setMovieObj } = useContext(GeneralContext);
-
-  useEffect(() => {
-    setMovieObj(movieExample)
-  }, [setMovieObj]);
+  const { movieObj } = useContext(GeneralContext);
 
   return (
     <FlexBox className='container'>
