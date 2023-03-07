@@ -12,11 +12,10 @@ import './App.scss';
 function App() {
   return (
     <FlexBox
-      style={{width: '100%', height: '100vh', padding: '0'}}
-      direction={FlexBoxDirection.Column}
+      className='container'
     >
       <FlexBox
-        style={{ width: '100%', minWidth: '350px', maxWidth: '800px', margin: '0 auto'}}
+        className='page'
         direction={FlexBoxDirection.Column}
         justifyContent={FlexBoxJustifyContent.Center}
         alignItems={FlexBoxAlignItems.Center}
@@ -34,7 +33,7 @@ function App() {
         </FlexBox>
       </FlexBox>
       <FlexBox
-        style={{width: '100%', height: '20px', backgroundColor: 'red'}}
+        className='footer'
       >
       </FlexBox>
     </FlexBox>
