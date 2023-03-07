@@ -1,4 +1,4 @@
-import { FlexBox } from '@ui5/webcomponents-react';
+import { FlexBox, FlexBoxDirection } from '@ui5/webcomponents-react';
 import { useContext } from 'react';
 
 import { GeneralContext } from '../../context/GeneralContext';
@@ -10,13 +10,15 @@ export default function MovieInfo() {
 
   return (
     <FlexBox className='movieInfo'>
-    <FlexBox>
-        title
-        text
-        actors
-        grade
-    </FlexBox>
-    <img src={movieObj.Poster} alt='movie poster' /> 
+        <FlexBox className='movieTexts' direction={FlexBoxDirection.Column}>
+            <h1>{movieObj.Title}</h1>
+            <p>{movieObj.Plot}</p>
+            <h2>Actors</h2>
+            <p>{movieObj.Actors}</p>
+            <h2>Review</h2>
+            <p>IMDb: <b>{movieObj.imdbRating}</b></p>
+        </FlexBox>
+        <img src={movieObj.Poster} alt='movie poster' /> 
     </FlexBox>
   );
 }
