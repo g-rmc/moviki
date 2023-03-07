@@ -1,4 +1,4 @@
-import { FlexBox, FlexBoxDirection } from '@ui5/webcomponents-react';
+import { FlexBox, FlexBoxDirection, Text } from '@ui5/webcomponents-react';
 import { useContext, useEffect } from 'react';
 
 import './App.scss';
@@ -11,7 +11,7 @@ import { GeneralContext } from '../context/GeneralContext';
 import movieExample from '../services/movieExample.json';
 
 export default function App() {
-  const { setMovieObj } = useContext(GeneralContext);
+  const { movieObj, setMovieObj } = useContext(GeneralContext);
 
   useEffect(() => {
     setMovieObj(movieExample)
@@ -26,7 +26,15 @@ export default function App() {
         </FlexBox>
         <FlexBox direction={FlexBoxDirection.Column}>
           <SearchBar />
-          <MovieInfo />
+          {movieObj.Response === 'True'?
+            <MovieInfo />
+            :
+            <Text
+              className='warning'
+            >
+              {movieObj.Error}
+            </Text>
+          }
         </FlexBox>
       </FlexBox>
       <FlexBox className='footer' />

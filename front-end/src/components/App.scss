@@ -3,10 +3,6 @@ $boxColor: #3C3C3C;
 $emphasisColor: #F6CF00;
 $baseColor: #EEEEEE;
 
-@mixin shadow() {
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .container {
     background-color: $backgroundColor;
     flex-direction: column;
@@ -61,4 +57,10 @@ $baseColor: #EEEEEE;
     background-size: contain;
     position: fixed;
     bottom: 0;
+}
+
+.warning {
+    font-weight: 600;
+    font-size: 16px;
+    color: $emphasisColor;
 }
