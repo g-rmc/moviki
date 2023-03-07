@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @Get('movie/:title')
-  getMovie(@Param('title') title: string): Movie {
-    return this.appService.getMovie(title);
+  async getMovie(@Param('title') title: string): Promise<Movie> {
+    return await this.appService.getMovie(title);
   }
 }
