@@ -4,7 +4,7 @@
 
 ## About this Project
 
-The **Moviki** is an app to search thousands of movies available at [OMDb API](https://www.omdbapi.com/).
+The **Moviki** is an app to search thousands of movies available at [OMDb API](https://www.omdbapi.com/). Type a movie title in the search bar and get a brief information about the movie, the poster and the IMDb review.
 
 ## Tecnologies
 
