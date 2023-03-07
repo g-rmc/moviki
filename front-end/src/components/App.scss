@@ -20,14 +20,47 @@ $baseColor: #EEEEEE;
     min-width: 350px;
     max-width: 800px;
     margin: 0 auto;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    padding: 70px 25px 90px 25px;
+}
+
+.header {
+    height: 45px;
+    width: calc(100% - 50px);
+    min-width: 300px;
+    max-width: 800px;
+    position: fixed;
+    top: 0;
+    margin-top: 25px;
+    border-bottom: 4px solid $emphasisColor;
+    
+    color: $emphasisColor;
+    align-items: center;
+    justify-content: centers;
+
+    img {
+        height: 45px;
+    }
+
+    h1 {
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 38px;
+        color: $emphasisColor;
+        margin-left: 8px;
+        transform: translateY(6px);
+    }
 }
 
 .footer {
+    height: 90px;
+    width: 100%;
     background-image: url("../assets/popcornBase.png");
     background-repeat: repeat-x;
     background-size: contain;
-    height: 90px;
-    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
+
+
