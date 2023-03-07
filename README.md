@@ -1,6 +1,6 @@
 # Moviki
 
-![Preview-Screens](https://github.com/g-rmc/Moviki/blob/main/assets/Movili.png)
+![Preview-Screens](https://github.com/g-rmc/moviki/blob/main/assets/Moviki.png)
 
 ## About this Project
 
