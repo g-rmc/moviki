@@ -1,4 +1,4 @@
-import { FlexBox, FlexBoxDirection, Text } from '@ui5/webcomponents-react';
+import { FlexBox, FlexBoxDirection, FlexBoxJustifyContent, FlexBoxAlignItems } from '@ui5/webcomponents-react';
 import { useContext } from 'react';
 
 import './App.scss';
@@ -19,16 +19,21 @@ export default function App() {
           <img src={icon} alt='logo'/>
           <h1> Moviki </h1>
         </FlexBox>
-        <FlexBox direction={FlexBoxDirection.Column}>
+        <FlexBox 
+          style={{width: '100%'}}
+          direction={FlexBoxDirection.Column}
+        >
           <SearchBar />
           {movieObj.Response === 'True'?
             <MovieInfo />
             :
-            <Text
+            <FlexBox
               className='warning'
+              alignItems={FlexBoxAlignItems.Center}
+              justifyContent={FlexBoxJustifyContent.Center}
             >
               {movieObj.Error}
-            </Text>
+            </FlexBox>
           }
         </FlexBox>
       </FlexBox>
