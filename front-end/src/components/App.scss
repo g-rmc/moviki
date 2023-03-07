@@ -5,7 +5,6 @@ $baseColor: #EEEEEE;
 
 .container {
     background-color: $backgroundColor;
-    flex-direction: column;
     height: 100vh;
     width: 100vw;
 }
@@ -16,8 +15,6 @@ $baseColor: #EEEEEE;
     min-width: 350px;
     max-width: 800px;
     margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
     padding: 70px 25px 90px 25px;
 }
@@ -33,19 +30,18 @@ $baseColor: #EEEEEE;
     border-bottom: 4px solid $emphasisColor;
     
     color: $emphasisColor;
-    align-items: center;
-    justify-content: centers;
 
     img {
         height: 45px;
+        transform: translateX(-3px);
     }
 
     h1 {
         font-family: 'Luckiest Guy', sans-serif;
-        font-size: 38px;
+        font-size: 42px;
         color: $emphasisColor;
         margin-left: 8px;
-        transform: translateY(6px);
+        transform: translateY(12px);
     }
 }
 

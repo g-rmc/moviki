@@ -15,7 +15,10 @@ export default function App() {
   return (
     <FlexBox className='container'>
       <FlexBox className='page'>
-        <FlexBox className='header'>
+        <FlexBox
+          className='header'
+          justifyContent={FlexBoxJustifyContent.SpaceBetween}
+        >
           <img src={icon} alt='logo'/>
           <h1> Moviki </h1>
         </FlexBox>
