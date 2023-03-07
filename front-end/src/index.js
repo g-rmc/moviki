@@ -5,13 +5,17 @@ import App from './components/App';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 
+import { GeneralContextProvider } from './context/GeneralContext';
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+    <ThemeProvider>
+      <GeneralContextProvider>
+        <App />
+      </GeneralContextProvider>
+    </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

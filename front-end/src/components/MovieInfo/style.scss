@@ -1,0 +1,9 @@
+@use '../App';
+
+.movieInfo {
+    img {
+        width: 100px;
+        object-fit: cover;
+        border: 2px solid App.$emphasisColor;
+    }
+}
