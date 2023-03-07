@@ -18,7 +18,11 @@ export default function MovieInfo() {
             <h2>Review</h2>
             <p>IMDb: <b>{movieObj.imdbRating}</b></p>
         </FlexBox>
-        <img src={movieObj.Poster} alt='movie poster' /> 
+        <img src={movieObj.Poster} alt='movie poster' onError={({ currentTarget }) => {
+            currentTarget.onerror = null; 
+            currentTarget.src=`https://sd.keepcalms.com/i/keep-calm-poster-not-found.png`;
+            }}
+        /> 
     </FlexBox>
   );
 }
