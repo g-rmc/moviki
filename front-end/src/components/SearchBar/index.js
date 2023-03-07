@@ -7,7 +7,7 @@ import './style.scss';
 
 export default function SearchBar() {
 
-  const { search, setSearch, setMovieObj, movikiAPI } = useContext(GeneralContext);
+  const { search, setSearch, setMovieObj, resetMovieObj, loading, setLoading, movikiAPI } = useContext(GeneralContext);
 
   function handleForm(e) {
     setSearch(e.target.value);
@@ -15,16 +15,19 @@ export default function SearchBar() {
 
   function clearForm() {
     setSearch("");
+    resetMovieObj();
   }
 
   async function submitSearch() {
+    resetMovieObj();
+    setLoading(true);
     try {
       const response = await movikiAPI.searchMovie(search);
-      console.log(response)
       setMovieObj(response.data);
     } catch (err) {
       console.error(err.message)
     }
+    setLoading(false);
   }
 
   return (
@@ -39,6 +42,7 @@ export default function SearchBar() {
         name='text'
         type='text'
         value={search}
+        disabled={loading}
         onChange={handleForm}
         onKeyDown={(e) => {
           if(e.key === 'Enter') submitSearch()

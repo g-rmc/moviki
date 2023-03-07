@@ -1,5 +1,6 @@
 import { FlexBox, FlexBoxDirection, FlexBoxJustifyContent, FlexBoxAlignItems } from '@ui5/webcomponents-react';
 import { useContext } from 'react';
+import { RotatingLines } from 'react-loader-spinner';
 
 import './App.scss';
 import icon from '../assets/icon.svg';
@@ -10,7 +11,7 @@ import MovieInfo from './MovieInfo';
 import { GeneralContext } from '../context/GeneralContext';
 
 export default function App() {
-  const { movieObj } = useContext(GeneralContext);
+  const { loading, movieObj } = useContext(GeneralContext);
 
   return (
     <FlexBox className='container'>
@@ -35,7 +36,17 @@ export default function App() {
               alignItems={FlexBoxAlignItems.Center}
               justifyContent={FlexBoxJustifyContent.Center}
             >
-              {movieObj.Error}
+              {loading?
+                <RotatingLines
+                  strokeColor="grey"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  width="96"
+                  visible={true}
+                />
+                :
+                <>{movieObj.Error}</>
+              }
             </FlexBox>
           }
         </FlexBox>
