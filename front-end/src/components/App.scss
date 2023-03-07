@@ -1,0 +1,32 @@
+$backgroundColor: #282c34;
+$boxColor: #3C3C3C;
+$emphasisColor: #F6CF00;
+$baseColor: #EEEEEE;
+
+@mixin shadow() {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.App-header {
+    background-color: $backgroundColor;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
